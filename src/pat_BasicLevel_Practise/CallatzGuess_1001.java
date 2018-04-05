@@ -20,24 +20,34 @@ import java.util.Scanner;
  * 输出样例：
  * 5
  */
+
+//类名要改为 Main
 public class CallatzGuess_1001 {
+
     public static void main(String[] args) {
-        System.out.println("输入样例：");
+
+        //pat的测试系统要求的格式很严格
+        //System.out.println("输入样例：");
         Scanner scanner = new Scanner(System.in);
         int num = scanner.nextInt();
-        int numCount = num;
+
         int step = 0;
 
         while (num != 1){
+
             if (num % 2 == 0) {
                 num = num /2 ;
+
             } else {
+
                 num = 3 * num + 1;
                 num = num /2;
             }
+
             step++;
         }
-        System.out.println("输出样例:\n" + step );
+        //System.out.println("输出样例:\n" + step );
+        System.out.println(step);
     }
 
 }

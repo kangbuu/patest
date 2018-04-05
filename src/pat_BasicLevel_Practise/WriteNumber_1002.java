@@ -32,19 +32,21 @@ public class WriteNumber_1002 {
 
         int sum = 0;
 
+        //对 char 进行 int 计算
         for (char oneNum : nums) {
+
             sum = oneNum - '0' + sum;
         }
 
-        String chinaNum = String.valueOf(sum);
+        //计算的结果 --> char数组
+        char[] results = String.valueOf(sum).toCharArray();
 
-        char[] i = chinaNum.toCharArray();
+        //没有线程问题存在，StringBuilder 速度更快
+        StringBuilder sb = new StringBuilder();
 
-        StringBuffer sb = new StringBuffer();
+        for (char result : results) {
 
-        for (char k : i) {
-
-            switch (k) {
+            switch (result) {
                 case '1':
                     sb.append(" yi");
                     break;
@@ -78,6 +80,7 @@ public class WriteNumber_1002 {
             }
         }
 
+        //去首尾空格
         System.out.println(sb.toString().trim());
     }
 }
